@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+ <channel>
+  <title>
+   algorithm Archives - Iva Boishin
+  </title>
+  <atom:link href="https://www.ibafflatusdesign.space/tag/algorithm/feed/" rel="self" type="application/rss+xml">
+  </atom:link>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/algorithm/
+  <description>
+   Portfolio
+  </description>
+  <lastbuilddate>
+   Fri, 29 Mar 2019 15:29:04 +0000
+  </lastbuilddate>
+  <language>
+   en-US
+  </language>
+  <sy:updateperiod>
+   hourly
+  </sy:updateperiod>
+  <sy:updatefrequency>
+   1
+  </sy:updatefrequency>
+  <generator>
+   https://wordpress.org/?v=7.0.1
+  </generator>
+  <image/>
+  <url>
+   https://www.ibafflatusdesign.space/wp-content/uploads/2016/11/cropped-Logo-1-32x32.jpg
+  </url>
+  <title>
+   algorithm Archives - Iva Boishin
+  </title>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/algorithm/
+  <width>
+   32
+  </width>
+  <height>
+   32
+  </height>
+  <item>
+   <title>
+    Clustering Using Algorithms
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/clustering-using-algorithms/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/clustering-using-algorithms/#comments
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 08 Jan 2019 16:02:18 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[algorithm]]>
+   </category>
+   <category>
+    <![CDATA[clustering]]>
+   </category>
+   <category>
+    <![CDATA[code]]>
+   </category>
+   <category>
+    <![CDATA[consumer profile]]>
+   </category>
+   <category>
+    <![CDATA[k-means]]>
+   </category>
+   <category>
+    <![CDATA[marketing]]>
+   </category>
+   <category>
+    <![CDATA[nearest neighbor]]>
+   </category>
+   <category>
+    <![CDATA[R]]>
+   </category>
+   <category>
+    <![CDATA[segmentation]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=3681
+   </guid>
+   <description>
+    <![CDATA[<p>In order to get a better view of your audience or products, an exploratory exercise that can be done is clustering. There are plenty of methods for clustering data, but I will only discuss two of the main ones (to keep the post from turning into a book): hierarchical clustering and k-means (or nearest neighbor) [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/clustering-using-algorithms/">Clustering Using Algorithms</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p>In order to get a better view of your audience or products, an exploratory exercise that can be done is clustering. There are plenty of methods for clustering data, but I will only discuss two of the main ones (to keep the post from turning into a book): hierarchical clustering and k-means (or nearest neighbor) clustering. The method that will be the most efficient for the task at hand will depend on the amount of data available.</p>
+<h2>Hierarchical Clustering</h2>
+<p>Hierarchical clustering is best when the amount of data is not too large and when you are unsure of how many clusters you want to make. The principle behind hierarchical clustering is that at every round, the closest two points/groups are clustered. This continues until there is only one group.</p>
+<p><img fetchpriority="high" decoding="async" width="308" height="303" src="http://ibafflatusdesign.space/wp-content/uploads/2019/01/Hierachical-clustering-ex.png" alt="" class="wp-image-3896" align="left"/></p>
+<p>In this example from the book <em>Data Science for Business</em> by Foster Provost and Tom Fawcett, point A and C are grouped together as they are the closest two points out of all of the points there. After that, point E and point B are clustered. During the third round, it gets interesting: point D is clustered with group 2. This happens because the points and groups are considered as a similar type of entity. So, since group 2 and point D had the shortest distance between them, they were clustered into group 3. When clustering groups, you need to decide on the measurement position for the groups. More specifically, when comparing the distances, is the distanced measured to the outer border or to the center of the group? This can make a significant difference in the clustering. It is important to note that at every round, this clustering method calculates the differences between all of the remaining ungrouped points and the remaining groups. As a result, a lot of calculations are needed in order to go through the whole process, which makes this method rather slow. For a small amount of data points though, the analysis will not be slowed down significantly and this remains a viable option.</p>
+<p><img decoding="async" width="452" height="348" src="http://ibafflatusdesign.space/wp-content/uploads/2019/01/Hierachical-clustering-dendrogram.png" alt="" class="wp-image-3897" align="right"/></p>
+<p>Once all of the groups are made, a dendrogram is created (see right). You start at the bottom with the individual points and cluster going up. The length of the lines specify the differences in distances between the clusters. When you draw a perpendicular line at any point on the dendrogram, the number of clustering lines that it crosses is the number of total clusters that result at that point. The idea here is to draw a line at the point where the clustering lines start to become relatively short. At this point, it means that the distances are relatively small and thus the differences between the points are relatively small. Since the goal of clustering is to create homogeneous groups, the goal of the dendrogram is to signal at how many clusters, the groups are more or less homogeneous. In this example, it would be at around 3 clusters, based on the dendrogram.</p>
+<h2>K-means Clustering</h2>
+<p>The other clustering method, k-means or nearest neighbor, has the advantage that it is significantly faster. However, in order to perform a k-means clustering, you must know ahead of time how many clusters you would like to have. The idea behind k-means clustering is that the algorithm will use your desired number of clusters and place that number of centroids on the plane with the points. Then, each point is assigned to the closest centroid. During the next round, the centers of those created groups is recalculated and used as the new centroids. After that, the points are reassigned to the closest centroid. This process repeats until the centroids at the beginning of the step are at the same location at the end of the step (i.e. they did not move). At this point, the algorithm has created the most efficient clusters given the number of clusters needed.</p>
+<p>This process may seem complicated and long but it is actually more efficient than the hierarchical clustering since it only calculates the distance between each point and the centroids. On the other hand, in hierarchical clustering, at every step, the distance between every pair of points/groups is calculated, which can become unmanageable with large datasets.</p>
+<h2>The Best of Both Worlds</h2>
+<p>At this point, you are probably thinking: <em>well, why not combine both of the methods and get the best of both worlds?</em> This has indeed been done and if you would like to learn more about how these two methods have been combined to form the optimal algorithm, feel free to do some research on &#8220;Two Step Clustering&#8221;.</p>
+<h2>Real World Applications</h2>
+<p>Clustering is a wonderful method to do some exploratory research of our audience or your products. You can determine the different types of clients that your company appeals to, which can in turn help you tailor your products and marketing. Clustering can also determine in what groups your audience places the products. To find this out, you will need to have some of the customers rate all of the products based on their attributes. Then, you can perform multidimensional clustering to determine how your customer base views your products and which products appeal to which segments of your audience.</p>
+<p>Where and why have you used clustering in the past?</p>
+<h6>Note: Images are from page 168 of <em>Data Science for Business</em> by Foster Provost and Tom Fawcett. (A great read if you want more in-depth explications.)</h6>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/clustering-using-algorithms/">Clustering Using Algorithms</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/clustering-using-algorithms/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    1
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    Spotify Recommendations Bring Music to Life
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/spotify-recommendations-bring-music-life/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/spotify-recommendations-bring-music-life/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 03 Oct 2017 14:18:14 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[ad revenue]]>
+   </category>
+   <category>
+    <![CDATA[algorithm]]>
+   </category>
+   <category>
+    <![CDATA[Big Data]]>
+   </category>
+   <category>
+    <![CDATA[location tracking]]>
+   </category>
+   <category>
+    <![CDATA[reminder marketing]]>
+   </category>
+   <category>
+    <![CDATA[Spotify]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=2280
+   </guid>
+   <description>
+    <![CDATA[<p>Everything is an algorithm. We like to think that we&#8217;re all special and different, when, in fact, we are all predictable. Spotify is using Big Data in order to predict nearby events that its specific customers might find interesting. Recently, I received an email from Spotify suggesting some concerts nearby. I think this is genius [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/spotify-recommendations-bring-music-life/">Spotify Recommendations Bring Music to Life</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p><a href="http://ibafflatusdesign.space/wp-content/uploads/2017/09/Spotify-Recommendations.png"><img decoding="async" class="alignleft wp-image-2281" src="http://ibafflatusdesign.space/wp-content/uploads/2017/09/Spotify-Recommendations.png" alt="" width="200" height="829" /></a>Everything is an algorithm. We like to think that we&#8217;re all special and different, when, in fact, we are all predictable. Spotify is using Big Data in order to predict nearby events that its specific customers might find interesting. Recently, I received an email from Spotify suggesting some concerts nearby. I think this is genius because Spotify is leveraging Big Data and location services to expand its product offering.</p>
+<p>First, Spotify uses Big Data to group users&#8217; musical tastes in order to suggest similar artists to other users. This encourages the Spotify user to continue to use the service as it takes the effort out of finding new music. The service can do it for you based on the music that you have already listened to. (I will dare to say that the similar music algorithm that Spotify is using is pretty accurate. While under Bebe Rexha it says &#8220;Because you listened to similar artists&#8221;, I do actually listen to Bebe Rexha. I simply haven&#8217;t done so since I&#8217;ve opened a Spotify account and thus Spotify does not know it.) Then, Spotify cross-references all of the artists that you are and that you may be interested in with your location to suggest possible concerts in your area that you may enjoy.</p>
+<p>By sending this email, Spotify has accomplished several goals. First, it has served its users a reminder marketing piece to get them back on the service. Second, it has extended its service offering; on top of providing new music suggestions in the app, Spotify has provided suggestions for real-live music experiences. Third, Spotify is likely gaining ad revenue based on the number of clicks that the email earns.</p>
+<p>Have you ever received a similar email? Did you think the product offering extension made sense with the current product offerings?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/spotify-recommendations-bring-music-life/">Spotify Recommendations Bring Music to Life</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/spotify-recommendations-bring-music-life/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+ </channel>
+</rss>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 66/70 objects using Disk
+Page Caching using Disk: Enhanced (Page is feed) 
+Database Caching 4/9 queries in 0.005 seconds using Disk
+
+Served from: www.ibafflatusdesign.space @ 2026-07-10 05:20:12 by W3 Total Cache
+-->

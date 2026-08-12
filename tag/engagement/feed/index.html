@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+ <channel>
+  <title>
+   engagement Archives - Iva Boishin
+  </title>
+  <atom:link href="https://www.ibafflatusdesign.space/tag/engagement/feed/" rel="self" type="application/rss+xml">
+  </atom:link>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/engagement/
+  <description>
+   Portfolio
+  </description>
+  <lastbuilddate>
+   Sat, 16 Feb 2019 22:30:58 +0000
+  </lastbuilddate>
+  <language>
+   en-US
+  </language>
+  <sy:updateperiod>
+   hourly
+  </sy:updateperiod>
+  <sy:updatefrequency>
+   1
+  </sy:updatefrequency>
+  <generator>
+   https://wordpress.org/?v=7.0.1
+  </generator>
+  <image/>
+  <url>
+   https://www.ibafflatusdesign.space/wp-content/uploads/2016/11/cropped-Logo-1-32x32.jpg
+  </url>
+  <title>
+   engagement Archives - Iva Boishin
+  </title>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/engagement/
+  <width>
+   32
+  </width>
+  <height>
+   32
+  </height>
+  <item>
+   <title>
+    Twitter Listening for Competitive Audit
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 18 Dec 2018 15:05:13 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[competitive analysis]]>
+   </category>
+   <category>
+    <![CDATA[competitor]]>
+   </category>
+   <category>
+    <![CDATA[Danone]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[IESEG]]>
+   </category>
+   <category>
+    <![CDATA[Nike]]>
+   </category>
+   <category>
+    <![CDATA[python]]>
+   </category>
+   <category>
+    <![CDATA[social listening]]>
+   </category>
+   <category>
+    <![CDATA[social media]]>
+   </category>
+   <category>
+    <![CDATA[Twitter]]>
+   </category>
+   <category>
+    <![CDATA[Wunderman]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=3712
+   </guid>
+   <description>
+    <![CDATA[<p>In a market economy, companies are always comparing themselves to their competitors in order to stay in business by ensuring that they are staying ahead of the competition. One way that companies measure themselves based on their competition is by looking at what consumers are saying about them. Last year, I was fortunate enough to [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/">Twitter Listening for Competitive Audit</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p>In a market economy, companies are always comparing themselves to their competitors in order to stay in business by ensuring that they are staying ahead of the competition. One way that companies measure themselves based on their competition is by looking at what consumers are saying about them.</p>
+<p>Last year, I was fortunate enough to participate in one of these competitor audits during my time at Wunderman DC. Some of the things that we looked at was how many users are talking about the brand (i.e. how many posts mention our client&#8217;s name vs that of the competitors), which tweets have the highest user engagement (i.e. get retweeted or liked the most) and finally what are the sentiments surrounding the topic using reports from Synthesio. While this process is very time consuming, aggregating these granular statistics and exploring these findings could be key in serving the consumers more effectively. Because this is an important analysis that is repeated periodically, I&#8217;ve been wondering if there was any way that this process could be automated in order to save valuable time for the analysis part by reducing the time needed for data collection.</p>
+<p><iframe style="margin-right: 10px;" src="https://drive.google.com/file/d/1Od4MOhTTmPbe4ei1v2fMluewciizkfiA/preview" width="480" height="360" align="left"></iframe>Recently I did just that! Using python and python libraries (such as Tweepy, WordCloud and TextBlob), I create a program that prints a pdf report (see left) for any user-defined keyword(s). I have made a loop that runs the program for as many keywords as the user specifies. I have also given the user the flexibility to choose how many tweets they would like to see by keyword. This will differ by industry/brand popularity. For example, running the program with 5000 tweets for Nike results in a report of the last couple of hours while running the program with 5000 tweets for Danone results in a report for the past couple of <i>days</i>.</p>
+<p>Another reason why I allowed this flexibility is because I see two uses for the program. First, as mentioned above, I see this program as helping automate the tedious task of social listening for competitive audits. Because of the Twitter API rate limit, a marketer will only be able to make 180 calls in 15 minutes. As a result, in order to have the program collect all of the tweets for the past 6 months, a time buffer of 5 seconds was created. In this way, whenever the program completes one call, it waits for five seconds before making the next one. The logic is that in 15 minutes, you can only make 180 calls. Five minutes has 900 seconds and 900 seconds divided by 180 calls results in 5 seconds per call. Therefore, this program can&#8217;t make more than 180 calls in 5 seconds even if it wanted to.</p>
+<p>However, running this code for a six month period could take a lot of time depending on the popularity of the brand. Therefore, I wanted to allow the user the flexibility to decide how many tweets they want to source in case they wanted to get a daily snapshot. As a result, I see the program as having a second function as a daily brand health test. Depending on the average chatter associated with the brand, the marketer should set the maximum tweet parameter to return the appropriate number of tweets for the past day. Because the program shows the popularity of the brand as well as the engagement of the consumers, it could give warning signs to changes in the landscape. If the metrics dip from one day to the next, the marketer might be interested in seeing what caused the change. On the other hand, if they skyrocket, it might be a good idea to see what the cause was in order to capitalize on this behavior to improve the marketing efforts.</p>
+<p>If you are interested in seeing the code or running the program, you can <a href="https://drive.google.com/open?id=1UW1fA160KJRqGZJPmQ_-Bq8YUHw7gkIL"><u>download the python code here</u></a>.</p>
+<p>Currently, I am working on converting the plots from matplotlib plots to <a href="https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503"><u>pyplots using Dash</u></a>, in order to make the report into an interactive html dashboard (stored locally). Do you have any suggestions for future updates?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/">Twitter Listening for Competitive Audit</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    Heinz introduces Mayochup
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/heinz-introduces-mayochup/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/heinz-introduces-mayochup/#comments
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Wed, 02 May 2018 03:34:02 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[Heinz]]>
+   </category>
+   <category>
+    <![CDATA[product involvement]]>
+   </category>
+   <category>
+    <![CDATA[Twitter]]>
+   </category>
+   <category>
+    <![CDATA[word-of-mouth]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=3145
+   </guid>
+   <description>
+    <![CDATA[<p>It’s official. #Mayochup will be in stores later this year, and your sauciest suggestions available online. Go to https://t.co/ZOFNuw4ytK to see if your name made it on a bottle. pic.twitter.com/T2QhxfQ5Aj — Heinz Ketchup (@HeinzKetchup_US) April 27, 2018 Heinz is attempting to increase consumer product involvement by incorporating consumer ideas. Companies look to increase product involvement [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/heinz-introduces-mayochup/">Heinz introduces Mayochup</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<blockquote class="twitter-tweet" data-lang="en" align="left" width="200px">
+<p dir="ltr" lang="en">It’s official. <a href="https://twitter.com/hashtag/Mayochup?src=hash&amp;ref_src=twsrc%5Etfw">#Mayochup</a> will be in stores later this year, and your sauciest suggestions available online. Go to <a href="https://t.co/ZOFNuw4ytK">https://t.co/ZOFNuw4ytK</a> to see if your name made it on a bottle. <a href="https://t.co/T2QhxfQ5Aj">pic.twitter.com/T2QhxfQ5Aj</a></p>
+<p>— Heinz Ketchup (@HeinzKetchup_US) <a href="https://twitter.com/HeinzKetchup_US/status/989926505307353089?ref_src=twsrc%5Etfw">April 27, 2018</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>Heinz is attempting to increase consumer product involvement by <a href="http://www.adweek.com/creativity/ok-you-monsters-heinz-will-release-mayochup-now-that-500000-of-you-asked-for-it/" rel="noopener" target="_blank"><u>incorporating consumer ideas</u></a>. Companies look to increase product involvement in order to increase loyalty and positive word of mouth. Creating involvement for CPG items is a tricky goal because it&#8217;s hard to make consumers identify with a more or less commodity product. To circumvent this, Heinz started a campaign to increase product involvement as well as product differentiation by leveraging the community and making them feel valued.</p>
+<p>This strategy is smart for various reasons. For one, having consumers directly tell a brand what product they would like to see cuts down on some of the R&amp;D costs of the company. The company knows that the consumers want this product because they told it so. In order to generate buzz and to be alerted to the other fans, Heinz created a Twitter poll asking for votes whether the company should release a ketchup-mayonnaise sauce mix. Besides the near one million votes that the poll earned, it also garnered quite a few comments&#8211;17,000 to be exact. This likely made consumers feel like they&#8217;re a part of a community and that their comments mattered. To further increase the feeling that the consumers have an impact on the actions of the company, Heinz asked the consumers to come up with a name for the products. With so many passionate replies, Heinz decided not to pick just one but to <a href="http://www.heinz.com/products/HeinzMayochup" target="_blank" rel="noopener"><u>print several dozens</u></a>. Seeing these various names in stores will make consumers feel like they really had an impact on the product and that this is truly a company that cares about consumer opinions. It will also likely make them think back to some of the comments that they read throughout the campaign and will make them laugh.</p>
+<p>Nonetheless, this is not a foul-poof strategy. Heinz needs to ensure that the combined formula has the same taste as when the two condiments are in their own bottles and put on separately. Also, just because consumers said that they wanted a product doesn&#8217;t mean that they will definitely buy it. The good thing is that Heinz will likely not incur any high start-up costs because it is using the same capabilities that it does for making ketchup and mayonnaise. Thus, there will only be marginal costs. So, as long as the revenue is larger than the marginal costs, the product will likely be a success.</p>
+<p>Would you buy this product? Do you think that it&#8217;ll be as big a hit in stores as it was on Twitter?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/heinz-introduces-mayochup/">Heinz introduces Mayochup</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/heinz-introduces-mayochup/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    1
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    CTAs to Drive Engagement
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/ctas-to-drive-engagement/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/ctas-to-drive-engagement/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 15 Aug 2017 15:44:08 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[consumer journey]]>
+   </category>
+   <category>
+    <![CDATA[CTA]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[KPI]]>
+   </category>
+   <category>
+    <![CDATA[pain point]]>
+   </category>
+   <category>
+    <![CDATA[volume KPI]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=1749
+   </guid>
+   <description>
+    <![CDATA[<p>Getting consumers to your website is only half the battle in marketing. Once there, consumers need to be seemlessly guided through the website in order to earn and increase the company&#8217;s KPIs. One of the easiest ways to do this is through call to actions (CTAs). What are the main types of KPIs? The two [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/ctas-to-drive-engagement/">CTAs to Drive Engagement</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p>Getting consumers to your website is only half the battle in marketing. Once there, consumers need to be seemlessly guided through the website in order to earn and increase the company&#8217;s KPIs. One of the easiest ways to do this is through call to actions (CTAs).</p>
+<h2>What are the main types of KPIs?</h2>
+<p>The two main types of KPIs are volume and engagement. Volume KPIs deal with the number of people who visit your website. Volume KPIs are mostly used to measure the effectiveness of marketing campaigns that <em>drive users to the website</em>. On the other hand, engagement KPIs measure how the <em>user interacted with</em> the website once there. (There is of course overlap. For example, a marketer often drills down to view engagement across channels and creatives that brought the user to the website. However, we&#8217;re going to keep it simple and have the two KPI groups represent two distinct parts of the consumer journey.)</p>
+<h2>Why do KPIs matter?</h2>
+<p>Engagement KPIs can give a marketer (or a website owner) valuable information on which content is beneficial to the visitor. This is done by analyzing metrics such as number of pages per session, average time on page and the bounce rate. Specifically, to increase the number of pages visited, a marketer must structure the website in a way that will promote further action. The main way to do this is to provide links to other parts of the website. The easiest and most simple thing that accomplishes this goal is the main navigation menu. It comes standard with any website. However, a menu doesn&#8217;t actually <i>encourage</i> a user to click to another page. A menu is intended to be used by users who know exactly where they want to go and which information they want to gain. If you are looking to increase engagement with users who weren&#8217;t planning on spending a lot of time on your website, adding CTAs will be your best bet (after creating interesting content of course.)</p>
+<h2>How do CTAs help your website?</h2>
+<p>CTAs, when used judiciously, can help increase user engagement by promoting interesting content. Due to their colorful nature, CTAs encourage the user to click on them and proceed through the website. Yet, if there are too many CTAs on your site, the user will likely get overwhelmed and leave the site altogether. Thus, CTAs will only get the job done if they are used in moderation.</p>
+<p>After attending the recent <a href="http://ibafflatusdesign.space/conferences/"><u>WordCamp conference in DC</u></a>, I learned a few skills in order to add navigation buttons to my two blog reels. I had been trying to add navigation buttons to my blog reels for a while, realizing the value that they bring, but couldn&#8217;t find an elegant plugin that would navigate between my separate blog categories. So I ended up building it myself with flexbox syntax. At the bottom of this page, you will notice my navigation CTA. While the blue navigation bar is rather simple, it it much more colorful than the rest of the webpage. You will also notice that I only have two CTAs on my webpages: the page navigation and the subscription widget in the right sidebar. I have kept my CTAs to a minimum in order to encourage engagement with my KPIs. My aim for this website is to garner a loyal readership (hence the subscription button), who are involved with my entire website (hence the navigation buttons).</p>
+<p>In sum, CTAs are useful when it comes to increasing user engagement by removing user pain points. Without the navigation button, users would most likely leave my website because having to scroll up and find another article to read from the main menu requires too much effort. By having navigation links with post titles, users are encouraged to stay on the website and read more posts. Moreover, if they decide that they like my content, they can easily subscribe to monthly mails with new content instead of having to check back manually or follow my posts on social media.</p>
+<p>Now it&#8217;s your turn. What are some CTAs that have managed to keep you on a site for a longer period than you had intended?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/ctas-to-drive-engagement/">CTAs to Drive Engagement</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/ctas-to-drive-engagement/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    Burger King’s Innovation Leads to Awards and Copycats
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/burger-kings-innovation-leads-awards-copycats/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/burger-kings-innovation-leads-awards-copycats/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 01 Aug 2017 21:18:21 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[Android]]>
+   </category>
+   <category>
+    <![CDATA[award]]>
+   </category>
+   <category>
+    <![CDATA[Burger King]]>
+   </category>
+   <category>
+    <![CDATA[Cannes Festival]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[HGTV]]>
+   </category>
+   <category>
+    <![CDATA[innovative]]>
+   </category>
+   <category>
+    <![CDATA[iPhone]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=1744
+   </guid>
+   <description>
+    <![CDATA[<p>Burger King&#8217;s Google Home commercial won the Direct Grand Prix at this year&#8217;s Cannes Festival. Now, you might be thinking: how is that even possible when it was criticized so much?! Think back to the adage &#8220;there&#8217;s no such thing as bad publicity&#8221;. The same is likely in play here. Due to this ad, the [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/burger-kings-innovation-leads-awards-copycats/">Burger King&#8217;s Innovation Leads to Awards and Copycats</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p><a href="http://ibafflatusdesign.space/brand-blog/smart-home-new-regulations/" target="_blank" rel="noopener"><u>Burger King&#8217;s <em>Google Home</em></u></a> commercial won the <a href="http://www.campaignlive.com/article/burger-king-adds-cannes-haul-direct-grand-prix-google-home-ad/1437087" target="_blank" rel="noopener"><u>Direct Grand Prix at this year&#8217;s Cannes Festival</u></a>. Now, you might be thinking: <em>how is that even possible when it was criticized so much?!</em> Think back to the adage &#8220;there&#8217;s no such thing as bad publicity&#8221;. The same is likely in play here. Due to this ad, the world was made aware of their lack of privacy and control when it comes to their smart devices. Yet, it was a pretty innovative hack that brought new meaning to TV ad engagement. Moreover, it garnered a great deal of earned media due to the original and innovative nature. It was likely due to this innovation and this bold move that David Miami (i.e. the marketing agency responsible for the commercial) was awarded the Grand Prix.</p>
+<h2>Enter the Copycat</h2>
+<p>At least one other agency views David Miami&#8217;s ad so innovative that it&#8217;s worth copying. That agency would be the one that makes the Property Brothers commercials. While I was watching HGTV one day, I heard &#8220;Hey Siri, show me more Property Brothers&#8221;. That sounded vaguely familiar until I noticed, a couple moments later, that it was basically the Burger King concept. As I&#8217;m an loyal Android user, nothing happened due to that commercial. However, Google Home and iPhones work on different principles. Because Google Home is made to improve the lives of a household, it is built to understand various voices. IPhones, though, need to be calibrated to the owner&#8217;s voice in order to make the voice commands work. As a result, the Property Brothers commercial is unlikely to have as big an impact on personal devices as the Google Home commercial. For this reason, marketers need to understand everything that goes into a campaign. While Property Brothers may have the same target market as Burger King, the marketing agency should have been more aware of the tools that it was using in order to make sure that its ad concept will work. Simply using flashy technology is not a guarantee that your campaign will be successful.</p>
+<p>Since the commercial isn&#8217;t uploaded online, I could not test it with my roommate&#8217;s iPhone to see if it would be activated. That being said, if you came across this commercial, did it activate your phone? Does it bother you or does it make life more convenient?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/burger-kings-innovation-leads-awards-copycats/">Burger King&#8217;s Innovation Leads to Awards and Copycats</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/burger-kings-innovation-leads-awards-copycats/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    L’Oréal and its Different Faces
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/loreal-different-faces/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/loreal-different-faces/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Fri, 03 Feb 2017 17:19:24 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[consumer profile]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[L'Oréal Paris]]>
+   </category>
+   <category>
+    <![CDATA[psycographic factors]]>
+   </category>
+   <category>
+    <![CDATA[social media]]>
+   </category>
+   <category>
+    <![CDATA[target market]]>
+   </category>
+   <category>
+    <![CDATA[The Body Shop]]>
+   </category>
+   <category>
+    <![CDATA[Twitter]]>
+   </category>
+   <category>
+    <![CDATA[user-generated content]]>
+   </category>
+   <category>
+    <![CDATA[values]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=1057
+   </guid>
+   <description>
+    <![CDATA[<p>I hadn&#8217;t done an international marketing post in a while so I thought it could be cool to pair that with some consumer profiling. The L&#8217;Oréal Group has a great deal of brands but today, I&#8217;m going to focus on L&#8217;Oréal Paris and The Body Shop. What I love about comparing and contrasting these brands is [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/loreal-different-faces/">L&#8217;Oréal and its Different Faces</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p>I hadn&#8217;t done an international marketing post in a while so I thought it could be cool to pair that with some consumer profiling. The L&#8217;Oréal Group has a great deal of brands but today, I&#8217;m going to focus on L&#8217;Oréal Paris and The Body Shop. What I love about comparing and contrasting these brands is that while they both belong to the same group, they originated from two entirely different cultures. L&#8217;Oréal Paris originated from the very high-fashion culture while The Body Shop from a very environmentally conscious one, which is displayed in the values they hold and the customers they target. To do these consumer profiles, I chose to look at their Twitter accounts. So, let&#8217;s dive in!</p>
+<h2>The Cover Photo</h2>
+<p><a href="http://ibafflatusdesign.space/wp-content/uploads/2017/02/LOreal.png" target="_blank"><img fetchpriority="high" decoding="async" class="alignright wp-image-1058" src="http://ibafflatusdesign.space/wp-content/uploads/2017/02/LOreal-300x205.png" width="420" height="287" /></a>Judging by The Body Shop&#8217;s cover photo, it&#8217;s very obvious that the brand focuses on nature and being green. They clearly show this through the abundance of green shades and all of the flowers and leaves. Besides that, the arrangement is very clean and uncluttered. This coupled with the fact that the only product in the picture is <em>Drops of Youth</em> makes it very clear that the customer is an individual that values their appearance. Instead of covering it up, the consumer tries to maintain their youth and cleanse themselves using natural products.</p>
+<p>L&#8217;Oréal, on the other hand, has a very dark cover photo. There&#8217;s a model with flawless, airbrushed skin staring back at you with the reddest lips. To her right are girls partying and to her left, a product by L&#8217;Oréal Paris. The entire cover photo resembles a high-end magazine ad. The focus on the gold color and word further highlights the notion. Judging by this cover photo, the brand believes that L&#8217;Oréal Paris&#8217; consumers like to go out and doll themselves up.</p>
+<h2>The Posts</h2>
+<p>Both accounts do a great job at linking the values to the products that they promote.</p>
+<p><a href="http://ibafflatusdesign.space/wp-content/uploads/2017/02/The-Body-Shop.png" target="_blank"><img decoding="async" class="alignleft wp-image-1059 size-medium" src="http://ibafflatusdesign.space/wp-content/uploads/2017/02/The-Body-Shop-300x273.png" width="300" height="273" /></a>The Body Shop connects with its consumers by showing them that the organization cares about the world. The Body Shop has clearly targeted its consumer well because there are just as much, if not more, tweets by the consumers praising the organization&#8217;s products and initiatives than tweets by the company pushing their products. @ashleyljames informs The Body Shop that she was delighted to learn about their <a href="http://www.thebodyshop.ca/enrich-not-exploit/" target="_blank">Enrich not Exploit</a> campaign. The organization doesn&#8217;t just do well in gaining support for its causes but also get quite a bit of praise on its products. Just below @ashleyljames&#8217; tweet is another one by @venetiafalconer, who is thrilled to have gotten vegan skincare. The Body Shop is clearly successful at targeting to the environmental- and health- conscious young adults.</p>
+<p><a href="http://ibafflatusdesign.space/wp-content/uploads/2017/02/LOreal-Paris.png" target="_blank"><img loading="lazy" decoding="async" class="alignright wp-image-1060 size-medium" src="http://ibafflatusdesign.space/wp-content/uploads/2017/02/LOreal-Paris-300x143.png" width="300" height="143" /></a>Contrastingly, L&#8217;Oréal Paris focuses on pushing their products. While most of the tweets on the organization&#8217;s page are by the organization itself, what I find novel is their little bit of consumer research. With this poll (pictured on the right), not only are they engaging their consumer but they are also gauging their interests. L&#8217;Oréal Paris could use this information to suggest products to help the consumers acheive their desired look. Given that most of the posts deal with looking forward to the weekend, L&#8217;Oréals customers are young adults whose main focus at the moment is having a good time.</p>
+<p>All in all, I think that The Body Shop is doing a better job at connecting to its target customer and generating user-generated content. Nonetheless, judging solely on the Twitter accounts, both organizations seem successful in their use of psychographic factors to reach their consumers.</p>
+<p>But what do you think? What would you suggest the organizations do to improve their dialogue with the consumers?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/loreal-different-faces/">L&#8217;Oréal and its Different Faces</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/loreal-different-faces/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+ </channel>
+</rss>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 45/210 objects using Disk
+Page Caching using Disk: Enhanced (Page is feed) 
+Database Caching 4/91 queries in 0.135 seconds using Disk (Request-wide modification query)
+
+Served from: www.ibafflatusdesign.space @ 2026-07-10 04:48:51 by W3 Total Cache
+-->

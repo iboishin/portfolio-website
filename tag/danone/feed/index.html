@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+ <channel>
+  <title>
+   Danone Archives - Iva Boishin
+  </title>
+  <atom:link href="https://www.ibafflatusdesign.space/tag/danone/feed/" rel="self" type="application/rss+xml">
+  </atom:link>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/danone/
+  <description>
+   Portfolio
+  </description>
+  <lastbuilddate>
+   Sat, 16 Feb 2019 22:30:58 +0000
+  </lastbuilddate>
+  <language>
+   en-US
+  </language>
+  <sy:updateperiod>
+   hourly
+  </sy:updateperiod>
+  <sy:updatefrequency>
+   1
+  </sy:updatefrequency>
+  <generator>
+   https://wordpress.org/?v=7.0.1
+  </generator>
+  <image/>
+  <url>
+   https://www.ibafflatusdesign.space/wp-content/uploads/2016/11/cropped-Logo-1-32x32.jpg
+  </url>
+  <title>
+   Danone Archives - Iva Boishin
+  </title>
+  <link/>
+  https://www.ibafflatusdesign.space/tag/danone/
+  <width>
+   32
+  </width>
+  <height>
+   32
+  </height>
+  <item>
+   <title>
+    Twitter Listening for Competitive Audit
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 18 Dec 2018 15:05:13 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[competitive analysis]]>
+   </category>
+   <category>
+    <![CDATA[competitor]]>
+   </category>
+   <category>
+    <![CDATA[Danone]]>
+   </category>
+   <category>
+    <![CDATA[engagement]]>
+   </category>
+   <category>
+    <![CDATA[IESEG]]>
+   </category>
+   <category>
+    <![CDATA[Nike]]>
+   </category>
+   <category>
+    <![CDATA[python]]>
+   </category>
+   <category>
+    <![CDATA[social listening]]>
+   </category>
+   <category>
+    <![CDATA[social media]]>
+   </category>
+   <category>
+    <![CDATA[Twitter]]>
+   </category>
+   <category>
+    <![CDATA[Wunderman]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=3712
+   </guid>
+   <description>
+    <![CDATA[<p>In a market economy, companies are always comparing themselves to their competitors in order to stay in business by ensuring that they are staying ahead of the competition. One way that companies measure themselves based on their competition is by looking at what consumers are saying about them. Last year, I was fortunate enough to [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/">Twitter Listening for Competitive Audit</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<p>In a market economy, companies are always comparing themselves to their competitors in order to stay in business by ensuring that they are staying ahead of the competition. One way that companies measure themselves based on their competition is by looking at what consumers are saying about them.</p>
+<p>Last year, I was fortunate enough to participate in one of these competitor audits during my time at Wunderman DC. Some of the things that we looked at was how many users are talking about the brand (i.e. how many posts mention our client&#8217;s name vs that of the competitors), which tweets have the highest user engagement (i.e. get retweeted or liked the most) and finally what are the sentiments surrounding the topic using reports from Synthesio. While this process is very time consuming, aggregating these granular statistics and exploring these findings could be key in serving the consumers more effectively. Because this is an important analysis that is repeated periodically, I&#8217;ve been wondering if there was any way that this process could be automated in order to save valuable time for the analysis part by reducing the time needed for data collection.</p>
+<p><iframe style="margin-right: 10px;" src="https://drive.google.com/file/d/1Od4MOhTTmPbe4ei1v2fMluewciizkfiA/preview" width="480" height="360" align="left"></iframe>Recently I did just that! Using python and python libraries (such as Tweepy, WordCloud and TextBlob), I create a program that prints a pdf report (see left) for any user-defined keyword(s). I have made a loop that runs the program for as many keywords as the user specifies. I have also given the user the flexibility to choose how many tweets they would like to see by keyword. This will differ by industry/brand popularity. For example, running the program with 5000 tweets for Nike results in a report of the last couple of hours while running the program with 5000 tweets for Danone results in a report for the past couple of <i>days</i>.</p>
+<p>Another reason why I allowed this flexibility is because I see two uses for the program. First, as mentioned above, I see this program as helping automate the tedious task of social listening for competitive audits. Because of the Twitter API rate limit, a marketer will only be able to make 180 calls in 15 minutes. As a result, in order to have the program collect all of the tweets for the past 6 months, a time buffer of 5 seconds was created. In this way, whenever the program completes one call, it waits for five seconds before making the next one. The logic is that in 15 minutes, you can only make 180 calls. Five minutes has 900 seconds and 900 seconds divided by 180 calls results in 5 seconds per call. Therefore, this program can&#8217;t make more than 180 calls in 5 seconds even if it wanted to.</p>
+<p>However, running this code for a six month period could take a lot of time depending on the popularity of the brand. Therefore, I wanted to allow the user the flexibility to decide how many tweets they want to source in case they wanted to get a daily snapshot. As a result, I see the program as having a second function as a daily brand health test. Depending on the average chatter associated with the brand, the marketer should set the maximum tweet parameter to return the appropriate number of tweets for the past day. Because the program shows the popularity of the brand as well as the engagement of the consumers, it could give warning signs to changes in the landscape. If the metrics dip from one day to the next, the marketer might be interested in seeing what caused the change. On the other hand, if they skyrocket, it might be a good idea to see what the cause was in order to capitalize on this behavior to improve the marketing efforts.</p>
+<p>If you are interested in seeing the code or running the program, you can <a href="https://drive.google.com/open?id=1UW1fA160KJRqGZJPmQ_-Bq8YUHw7gkIL"><u>download the python code here</u></a>.</p>
+<p>Currently, I am working on converting the plots from matplotlib plots to <a href="https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503"><u>pyplots using Dash</u></a>, in order to make the report into an interactive html dashboard (stored locally). Do you have any suggestions for future updates?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/">Twitter Listening for Competitive Audit</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/twitter-listening-for-competitive-audit/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+  <item>
+   <title>
+    CPG Companies Focus on Sustainability
+   </title>
+   <link/>
+   https://www.ibafflatusdesign.space/brand-blog/cpg-companies-focus-on-sustainability/
+   <comments>
+    https://www.ibafflatusdesign.space/brand-blog/cpg-companies-focus-on-sustainability/#respond
+   </comments>
+   <dc:creator>
+    <![CDATA[Iva]]>
+   </dc:creator>
+   <pubdate>
+    Tue, 12 Jun 2018 15:39:58 +0000
+   </pubdate>
+   <category>
+    <![CDATA[Brand Blog]]>
+   </category>
+   <category>
+    <![CDATA[CPG]]>
+   </category>
+   <category>
+    <![CDATA[Danone]]>
+   </category>
+   <category>
+    <![CDATA[Heinz]]>
+   </category>
+   <category>
+    <![CDATA[Nestle]]>
+   </category>
+   <category>
+    <![CDATA[sustainability]]>
+   </category>
+   <guid ispermalink="false">
+    http://ibafflatusdesign.space/?p=3288
+   </guid>
+   <description>
+    <![CDATA[<p>#DidYouKnow we’re developing an 100% sustainable plastic bottle with @Danone &#38; Origin Materials: https://t.co/XAqHZhiwz0 #BeatPlasticPollution pic.twitter.com/DC1xRO49hA — Nestlé (@Nestle) June 6, 2018 Plastic waste ending up in landfills and in the ocean has become a major concern for various groups around the world. Some are indirectly impacted by the issue, fighting to protect marine life. [&#8230;]</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/cpg-companies-focus-on-sustainability/">CPG Companies Focus on Sustainability</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </description>
+   <content:encoded>
+    <![CDATA[<blockquote class="twitter-tweet" data-lang="en" align="left" width="250">
+<p dir="ltr" lang="en"><a href="https://twitter.com/hashtag/DidYouKnow?src=hash&amp;ref_src=twsrc%5Etfw">#DidYouKnow</a> we’re developing an 100% sustainable plastic bottle with <a href="https://twitter.com/Danone?ref_src=twsrc%5Etfw">@Danone</a> &amp; Origin Materials: <a href="https://t.co/XAqHZhiwz0">https://t.co/XAqHZhiwz0</a> <a href="https://twitter.com/hashtag/BeatPlasticPollution?src=hash&amp;ref_src=twsrc%5Etfw">#BeatPlasticPollution</a> <a href="https://t.co/DC1xRO49hA">pic.twitter.com/DC1xRO49hA</a></p>
+<p>— Nestlé (@Nestle) <a href="https://twitter.com/Nestle/status/1004260502959161344?ref_src=twsrc%5Etfw">June 6, 2018</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>Plastic waste ending up in landfills and in the ocean has become a major concern for various groups around the world. Some are indirectly impacted by the issue, fighting to protect marine life. Others, such as residents of Indonesia, are directly impacted by plastic waste and have their rivers and beaches flooded by plastic bottles. As a result, many organizations are pushing for a ban on plastic straws and for an increase in the use of reusable water bottles. CPG companies are hit the hardest by plastic product criticisms as their products are typically for short-term use and regularly employ plastic packaging that may end up in oceans and rivers. As a result, all CPG companies have adopted some sort of sustainability programs to show to their customers that the companies share the same values as the consumers.</p>
+<p>Both Danone and Nestle have ambitious sustainability goals for the year 2030. One of these sustainability goals that both companies share is to eliminate the negative impact that their water bottles have on the environment. With the help of Origin Materials, Nestle and Danone are aiming to replace petroleum-based plastic water bottles with bio-based bottles, which are intended to be better for the environment. This is an especially important PR move for Nestle, whose water bottle division has been under harsh criticism over the California drought controversy.</p>
+<p>This tweet announcing the initiative was posted last week and yet has less than 50 interactions, which is significantly less than the over ten thousand interactions that <strong><em>each</em></strong> of the mayochup tweets received at the end of April. Because the tweets were sent out by different accounts, I took a look to see if it might simply be that the @Nestle account had fewer followers than the @HeinzKetchup_US account. It turned out that @Nestle has around 221K followers while @HeinzKetchup_US has only 41.6K followers. Therefore, it seems weird that an account with less than 20% followers receives thousands of interactions more. Could it be that consumers are less interested in sustainability than they claim to be? After some research, I found that <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jiec.12310" target="_blank" rel="noopener"><u>various studies</u></a> have shown that information about sustainability initiatives by companies has a limited impact on consumer buying behavior. So, in your opinion, would you say that CPG companies investing in sustainability initiatives are wasting their money, are differentiating themselves or are simply trying to keep up with the curve?</p>
+<p>The post <a href="https://www.ibafflatusdesign.space/brand-blog/cpg-companies-focus-on-sustainability/">CPG Companies Focus on Sustainability</a> appeared first on <a href="https://www.ibafflatusdesign.space">Iva Boishin</a>.</p>
+]]>
+   </content:encoded>
+   <wfw:commentrss>
+    https://www.ibafflatusdesign.space/brand-blog/cpg-companies-focus-on-sustainability/feed/
+   </wfw:commentrss>
+   <slash:comments>
+    0
+   </slash:comments>
+  </item>
+ </channel>
+</rss>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 47/82 objects using Disk
+Page Caching using Disk: Enhanced (Page is feed) 
+Database Caching 4/15 queries in 0.040 seconds using Disk
+
+Served from: www.ibafflatusdesign.space @ 2026-07-10 05:19:34 by W3 Total Cache
+-->
