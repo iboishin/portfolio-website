@@ -257,11 +257,21 @@ def run(apply):
 
 
 if __name__ == '__main__':
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--extract', action='store_true')
-    ap.add_argument('--check', action='store_true')
-    ap.add_argument('--apply', action='store_true')
+    ap = argparse.ArgumentParser(
+        description='Stamp _nav-desktop.html / _nav-mobile.html into every page. '
+                    'See _tools/README.md.',
+        epilog='typical use: edit the two _nav-*.html files, run --check, then --apply')
+    ap.add_argument('--check', action='store_true',
+                    help='report what would change; writes nothing (exit 1 if anything differs)')
+    ap.add_argument('--apply', action='store_true',
+                    help='write the menus into every page')
+    ap.add_argument('--extract', action='store_true',
+                    help='rebuild the two templates from a page (NAV_SOURCE=path to choose it); '
+                         'overwrites them, so hand edits are lost')
     a = ap.parse_args()
+    if not (a.check or a.apply or a.extract):
+        ap.print_help()
+        sys.exit(0)
     if a.extract:
         do_extract()
     if a.check or a.apply:
