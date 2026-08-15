@@ -26,7 +26,7 @@ import os, re, sys, argparse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DESKTOP = os.path.join(ROOT, '_nav-desktop.html')
 MOBILE = os.path.join(ROOT, '_nav-mobile.html')
-SOURCE_PAGE = os.environ.get('NAV_SOURCE', 'index.html?p=1561.html')
+SOURCE_PAGE = os.environ.get('NAV_SOURCE', 'brand-blog/heinekens-psa/index.html')
 
 ABSOLUTE = re.compile(r'^(?:[a-z][a-z0-9+.-]*:|//|#|data:)', re.I)
 LI_OPEN = re.compile(r'<li\b[^>]*>')

@@ -82,7 +82,7 @@ If the canonical files are ever lost or you want to re-derive them from a page:
 python3 _tools/update-nav.py --extract
 ```
 
-This reads the menu out of one page (`index.html?p=1561.html` by default,
+This reads the menu out of one page (`brand-blog/heinekens-psa/index.html` by default,
 override with `NAV_SOURCE=some/page.html`) and turns it into the two templates.
 It overwrites `_nav-desktop.html` and `_nav-mobile.html`, so any hand edits in
 them are lost. You rarely want this.
